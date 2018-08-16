@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Data;
 
 class PagesController extends Controller
 {
@@ -43,7 +44,7 @@ class PagesController extends Controller
     }
 
     public function domainAvailability(){
-        return view('pages.domainAvail');
+        return view('domainAvail');
     }
 
     public function search(Request $request){
@@ -53,8 +54,10 @@ class PagesController extends Controller
 
             if($domains){
                 foreach($domains as $key=> $domain){
+                    $output.='<p>'.$domain->domain.'p';
                     
                 }
+                return Response($output);
             }
         }
     }

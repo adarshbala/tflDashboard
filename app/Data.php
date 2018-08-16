@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Data extends Model
-{
+{    
     protected $table = 'datatables_data';
 	public $timestamps = false;
+
 }

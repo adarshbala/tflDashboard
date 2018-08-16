@@ -26,7 +26,7 @@
 
             <div class="panel-heading">
 
-                <h3>Products info </h3>
+                <h2>Products info </h2>
 
             </div>
 
@@ -37,30 +37,10 @@
                     <input type="text" class="form-controller" id="search" name="search"></input>
 
                         </div>
+                            <h3>Domain: </h3>
+                            <p>
 
-                            <table class="table table-bordered table-hover">
-
-                            <thead>
-
-                                <tr>
-
-                                    <th>ID</th>
-
-                                    <th>Product Name</th>
-
-                                    <th>Description</th>
-
-                                    <th>Price</th>
-
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                            </tbody>
-
-                            </table>
+                            </p>
 
                         </div>
 
@@ -87,7 +67,7 @@
 
         success:function(data){
 
-            $('tbody').html(data);
+            $('p').html(data);
 
         }});
     })

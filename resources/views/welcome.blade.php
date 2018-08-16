@@ -291,6 +291,7 @@ function fillmodalData(details){
 </script>
    <footer id="mainFooter">
         <p style="text-align:center; font-weight:bold">Telecom Fiji Limited © 2018</p>
-    </footer>
+	</footer>
+	
 </body>
 </html>

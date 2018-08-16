@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Input;
 
 Route::get('/viewUser',function(){
     $data = Data::all();
-    return view('welcome')->withData ($data);
+    return view('viewUser')->withData ($data);
 });
 Route::post('/editItem', function (Request $request) {
 	
@@ -53,7 +53,7 @@ Route::post('/deleteItem', function (Request $request) {
 	return response ()->json ();
 } );
 
-
+Route::get('/search','PagesController@domainAvailability');
 Auth::routes();
 Route::get('/','PagesController@index');
 Route::get('/about','PagesController@about');

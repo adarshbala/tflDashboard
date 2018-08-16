@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container ">
+		
 		{{ csrf_field() }}
 		<div class="table-responsive text-center">
 			<table class="table table-borderless" id="table">
@@ -234,5 +236,9 @@ function fillmodalData(details){
             }
         });
     });
-    </script>
+	</script>
+	<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
 @endsection 
