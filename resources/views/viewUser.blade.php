@@ -86,13 +86,7 @@
 						<p class="email_error error text-center alert alert-danger hidden"></p>
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="gender">Gender</label>
-							<div class="col-sm-10">
-								<select class="form-control" id="gender" name="gender">
-									<option value="" disabled selected>Choose your option</option>
-									<option value="Male">Male</option>
-									<option value="Female">Female</option>
-								</select>
-							</div>
+							push
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="country">Country:</label>

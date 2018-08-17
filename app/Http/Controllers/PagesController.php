@@ -20,6 +20,11 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
+    public function domainAvailability(){
+        return view('domainAvail');
+    }
+
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -41,24 +46,5 @@ class PagesController extends Controller
 
     public function cuser(){
         return view('pages.cuser');
-    }
-
-    public function domainAvailability(){
-        return view('domainAvail');
-    }
-
-    public function search(Request $request){
-        if($request->ajax()){
-            $Output="Domain is available";
-            $domains = DB::table('current_domains')->where('domain','LIKE','%'.$request->search."%")->get();
-
-            if($domains){
-                foreach($domains as $key=> $domain){
-                    $output.='<p>'.$domain->domain.'p';
-                    
-                }
-                return Response($output);
-            }
-        }
     }
 }
