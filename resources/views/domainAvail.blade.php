@@ -7,7 +7,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div style= "background-color:royalblue;font-weight:bold;color:white;font-size:1vw;" class="card-header">Search .school.fj Domains</div>
-                                <div style="background-color:orange;" class="card-body">
+                                <div style="background-color:silver;" class="card-body">
                                         <form action="/search" method="POST" role="search">
                                         </br>
                                     </br>
@@ -21,13 +21,13 @@
                                             </span>
                                         </div>
                                     </form>
+                                </br>
                                     
                                     @if(isset($details))
-                                            </br>
                                         <h2 style="text-align:center;"> Domain for  <b>{{ $query }}</b>.school.fj already exist.</h2>
                                         <h3 style="text-align:center;">Inventory Record:</h3>
-                                        <table style="width:100%;margin-right:auto;margin-left:auto;text-align:center; background-color:white; border-collapse:collapse;"class="table table-striped">
-                                            <thead>
+                                        <table class="table table-hover table-bordered" style="width:70%;margin-right:auto;margin-left:auto;text-align:center; background-color:white; border-collapse:collapse;">
+                                            <thead class="thead-dark">
                                                 <tr>
                                                     <th style="text-align:center;">ID</th>
                                                     <th style="text-align:center;">Domain (.school.fj)</th>

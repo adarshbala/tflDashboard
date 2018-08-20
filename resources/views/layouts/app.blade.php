@@ -21,7 +21,7 @@
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
 
@@ -36,11 +36,12 @@
 </head>
     <style>
         .responsiveIMG{
-            width:60%;
-            height: 40%;
+            width:30%;
+            height: auto;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            opacity:1.0;
         }  
 
         .navbar-brand{
@@ -56,7 +57,10 @@
 
         .mainFooter{
             width: 100%;
-            height: 100%;
+            height: auto;
+            position:fixed;
+            bottom:0;
+            background-color:royalblue;
         }
 
     </style>
@@ -64,9 +68,22 @@
     
    
 </head>
-<body style="background-color: skyblue;">
-    <div id="container">
+<header>
         <table class="table-responsive" style="background-color:royalblue;width:100%;" align="center">
+                <tr>
+                    <td style="padding-right:10px;padding-left:10px;padding-top:20px;padding-bottom:20px;">
+                            <div style="background-color:white;opacity:0.4;"><img src="{{URL::to('/images/telecom-fiji-limited-logo.png')}}" alt="TFL Logo" class="responsiveIMG"></img></div>
+                    </td>
+                    <td style="padding-right:10px;padding-left:10px;padding-top:20px;padding-bottom:20px;" >
+                            <h2 style="color:white;text-align:center;">TFL ISP</h2> 
+                    </td>
+                    {{-- <td style = "font-size:3.95vw; font-weight:bold">
+                        <p style="color:white;text-align:center; outline:black">TELECOM FIJI - DNS MANAGEMENT PORTAL</p>
+                    </td> --}}
+                </tr>
+    </table>
+</header>
+{{-- <table class="table-responsive" style="background-color:royalblue;width:100%;" align="center">
             <tr>
                 <td style="padding-right:10px;padding-left:10px;padding-top:20px;padding-bottom:20px;" >
                     <div style="background-color:white;"><img src="{{URL::to('/images/telecom-fiji-limited-logo.png')}}" alt="TFL Logo" class="responsiveIMG"></img></div>
@@ -75,7 +92,10 @@
                     <p style="color:white;text-align:center; outline:black">TELECOM FIJI - DNS MANAGEMENT PORTAL</p>
                 </td>
             </tr>
-        </table>
+</table> --}}
+<body style="background-color:skyblue;">
+    <div id="container">
+        
 
     </div>
     <div id="app">
@@ -84,8 +104,8 @@
         </main>
 
     </div>
-    <footer id="mainFooter">
-        <p style="text-align:center; font-weight:bold">Telecom Fiji Limited © 2018</p>
+    <footer style="background-color:royalblue;line-height:300%;"class="fixed-bottom">
+        <p style="text-align:center; font-weight:bold; color:white">Telecom Fiji Limited © 2018</p>
     </footer>
 
     

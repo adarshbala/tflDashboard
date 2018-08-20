@@ -8,7 +8,7 @@
             <div class="card">
                 <div style="background-color:royalblue;font-weight:bold;color:white;font-size:1vw;"class="card-header">{{ __('Login') }}</div>
 
-                <div style="background-color:orange"class="card-body">
+                <div style="background-color:silver;"class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
