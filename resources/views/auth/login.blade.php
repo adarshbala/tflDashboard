@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div style="background-color:royalblue;font-weight:bold;color:white;font-size:1vw;"class="card-header">{{ __('Login') }}</div>
+                <div style="background-color:black; font-weight:bold;color:white;font-size:1vw;"class="card-header">{{ __('Login') }}</div>
 
                 <div style="background-color:silver;"class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">

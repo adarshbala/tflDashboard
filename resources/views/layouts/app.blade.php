@@ -36,11 +36,9 @@
 </head>
     <style>
         .responsiveIMG{
-            width:30%;
+            width:50%;
             height: auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
             opacity:1.0;
         }  
 
@@ -60,7 +58,7 @@
             height: auto;
             position:fixed;
             bottom:0;
-            background-color:royalblue;
+            background-color:azure;
         }
 
     </style>
@@ -68,14 +66,20 @@
     
    
 </head>
-<header>
-        <table class="table-responsive" style="background-color:royalblue;width:100%;" align="center">
+<header class="fixed">
+        <table class="table-responsive" style="background-color:darkgray;width:100%;" align="center">
                 <tr>
-                    <td style="padding-right:10px;padding-left:10px;padding-top:20px;padding-bottom:20px;">
-                            <div style="background-color:white;opacity:0.4;"><img src="{{URL::to('/images/telecom-fiji-limited-logo.png')}}" alt="TFL Logo" class="responsiveIMG"></img></div>
+                    <td style="padding-left:10px;">
+                            <div><img src="{{URL::to('/images/telecom-fiji-limited-logo.png')}}" alt="TFL Logo" class="responsiveIMG"></img></div>
                     </td>
-                    <td style="padding-right:10px;padding-left:10px;padding-top:20px;padding-bottom:20px;" >
-                            <h2 style="color:white;text-align:center;">TFL ISP</h2> 
+                    <td style="width:80%;text-align:center;">
+                            <p style="color:darkslategray;font-size:3vw;">TFL DNS Management Portal</p> 
+                    </td>
+                    <td style="text-align:justify; color:darkslategray;font-size:0.7vw;">
+                            Customer Care </br>
+                            Central – 3304019 </br>
+                            Western - 6650019 </br>
+                            Northern – 8814019 </br>
                     </td>
                     {{-- <td style = "font-size:3.95vw; font-weight:bold">
                         <p style="color:white;text-align:center; outline:black">TELECOM FIJI - DNS MANAGEMENT PORTAL</p>
@@ -93,7 +97,7 @@
                 </td>
             </tr>
 </table> --}}
-<body style="background-color:skyblue;">
+<body style="background-color:lightgray;">
     <div id="container">
         
 
@@ -104,8 +108,8 @@
         </main>
 
     </div>
-    <footer style="background-color:royalblue;line-height:300%;"class="fixed-bottom">
-        <p style="text-align:center; font-weight:bold; color:white">Telecom Fiji Limited © 2018</p>
+    <footer style="background-color:darkgray;line-height:300%;"class="fixed-bottom">
+        <p style="text-align:center; font-weight:bold; color:darkslategray;">Telecom Fiji Limited © 2018</p>
     </footer>
 
     

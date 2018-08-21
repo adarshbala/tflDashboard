@@ -24,6 +24,11 @@ class PagesController extends Controller
         return view('domainAvail');
     }
 
+    public function sqlViewTLD(){
+        $domain = DB::select('select * from domains');
+        return view('layouts.dashboard',['domains'=>$domain]);
+    }
+
 
     public function __construct()
     {
@@ -46,5 +51,9 @@ class PagesController extends Controller
 
     public function cuser(){
         return view('pages.cuser');
+    }
+
+    public function support(){
+        return view('layouts.support');
     }
 }

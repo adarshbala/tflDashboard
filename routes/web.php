@@ -75,5 +75,6 @@ Route::get('/about','PagesController@about');
 Route::get('/services','PagesController@services');
 Route::get('/cuser','PagesController@cuser');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home','PagesController@sqlViewTLD');
+Route::get('/dashboard','PagesController@sqlViewTLD');
+Route::get('/support','PagesController@support');
 
