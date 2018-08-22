@@ -15,6 +15,7 @@
 use App\Data;
 use App\User;
 use App\DomainAvailability;
+use App\subDomain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -58,6 +59,7 @@ Route::post('/deleteItem', function (Request $request) {
 
 Route::get('/search','PagesController@domainAvailability');
 Route::post ( '/search', function () {
+
 	$q = Input::get ( 'q' );
 	if($q != ""){
 		$domain = DomainAvailability::where( 'domain','=', $q . '.school.fj' )->get ();
@@ -69,6 +71,20 @@ Route::post ( '/search', function () {
 	return view ( 'domainAvail' )->withMessage ( 'No existing Domain,  ' . $q . '.school.fj is available.');
 } );
 
+// Route::post('/searchDomain', function(){
+// 	$x = Input::get('x');
+// 	if($x != ""){
+// 		$subdomain=subDomain::where('subdomain','LIKE', '%' .$x)->get ();
+// 		if(count($subdomain)>0)
+// 			return view ('layouts.dashboard')->withDetails ($subdomain)->withQuery ($x);
+// 		else
+// 			return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
+// 	}
+// 	return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
+// });
+
+Route::post('/dashboard/search','PagesController@subDomainQuery');
+
 Auth::routes();
 Route::get('/','PagesController@index');
 Route::get('/about','PagesController@about');
@@ -77,4 +93,5 @@ Route::get('/cuser','PagesController@cuser');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard','PagesController@sqlViewTLD');
 Route::get('/support','PagesController@support');
+
 

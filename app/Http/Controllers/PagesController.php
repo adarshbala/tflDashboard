@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+//use App\topLevelDomain; 
 use App\Data;
+use App\subDomain;
+use Illuminate\Support\Facades\Input;
 
 class PagesController extends Controller
 {
@@ -25,10 +28,22 @@ class PagesController extends Controller
     }
 
     public function sqlViewTLD(){
-        $domain = DB::select('select * from domains');
-        return view('layouts.dashboard',['domains'=>$domain]);
+        $domains = DB::select('select * from domains');
+        return view('layouts.dashboard',['domains'=> $domains]);
     }
 
+    public function subDomainQuery(){
+        $x = Input::get('x');
+       // $x = ($request->x);
+        if($x != ""){
+            $subdomain=subDomain::where('subdomain','LIKE', '%' .$x)->get ();
+            if(count($subdomain)>0)
+                return view ('layouts.dashboard')->withDetails ($subdomain)->withQuery ($x);
+            else
+                return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
+        }
+        return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
+    }
 
     public function __construct()
     {
