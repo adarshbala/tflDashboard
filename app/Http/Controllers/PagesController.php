@@ -28,22 +28,45 @@ class PagesController extends Controller
     }
 
     public function sqlViewTLD(){
-        $domains = DB::select('select * from domains');
+        $domains = DB::select('select domains from domains');
         return view('layouts.dashboard',['domains'=> $domains]);
     }
 
     public function subDomainQuery(){
+        $domains = DB::select('select domains from domains');
         $x = Input::get('x');
        // $x = ($request->x);
         if($x != ""){
             $subdomain=subDomain::where('subdomain','LIKE', '%' .$x)->get ();
             if(count($subdomain)>0)
-                return view ('layouts.dashboard')->withDetails ($subdomain)->withQuery ($x);
+                return view ('layouts.dashboard')->withDetails ($subdomain)->with(compact('x', 'domains'));
             else
-                return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
+                return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for ' . $x )->with(compact('x', 'domains'));
         }
-        return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
+        return view ( 'layouts.dashboard' )->withMessage ( 'Please enter domain name. ' )->with(compact('x', 'domains'));
     }
+
+    // public function subDomainQuery2(Request $request){
+    //     $domains = DB::select('select domains from domains');
+    //     // $x = Input::get('x');
+    //     $x = $request->input('x');
+    //     // $x = ".com.fj";
+    //     if($x != ""){
+    //         $subdomain=subDomain::where('subdomain','LIKE', '%' .$x)->get ();
+    //         if(count($subdomain)>0)
+    //         {
+    //             return view ('layouts.dashboard')->withDetails ($subdomain)->with(compact('x', 'domains'));
+    //         }
+    
+    //         else
+    //         {
+    //             return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for ' . $x )->with(compact('x', 'domains'));
+    //         }
+   
+    //     }
+    //     return view ( 'layouts.dashboard' )->withMessage ( 'Please enter domain name. ' )->with(compact('x', 'domains'));
+    // }
+
 
     public function __construct()
     {

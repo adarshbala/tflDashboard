@@ -83,7 +83,8 @@ Route::post ( '/search', function () {
 // 	return view ( 'layouts.dashboard' )->withMessage ( 'No existing sub-domains for  ' . $x );
 // });
 
-Route::post('/dashboard/search','PagesController@subDomainQuery');
+Route::post('/searchSub','PagesController@subDomainQuery');
+// Route::get('/searchSub/{x}','PagesController@subDomainQuery2');
 
 Auth::routes();
 Route::get('/','PagesController@index');
